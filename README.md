@@ -1,5 +1,28 @@
-# Vue 3 + Vite
+# github pages
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+* 创建 
+```
+yarn create vite xs-idea-vue --template vue
+```
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+* 仓库
+```
+git init
+git remote add origin https://github.com/xsidea/web.git
+```
+
+* 扩展库
+```
+yarn add gh-pages -D
+```
+
+* vite.config.js
+```
+base: '/web/', // 部署到github上的路径
+```
+* package.json
+```
+"predeploy": "vite build",
+"deploy": "gh-pages -d dist -r https://github.com/xsidea/web.git -b pages"
+```
+ 
